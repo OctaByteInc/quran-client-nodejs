@@ -1,0 +1,28 @@
+{
+  "name": "quran-client-nodejs",
+  "version": "1.0.0",
+  "description": "API client for Quran in NodeJs",
+  "main": "fetcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octabytes/quran-client-nodejs.git"
+  },
+  "keywords": [
+    "quran",
+    "quran-api",
+    "quran-client",
+    "quran-api-client"
+  ],
+  "author": "OctaByte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octabytes/quran-client-nodejs/issues"
+  },
+  "homepage": "https://github.com/octabytes/quran-client-nodejs#readme",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0"
+  }
+}
