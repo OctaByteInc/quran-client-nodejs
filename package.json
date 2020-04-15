@@ -4,7 +4,7 @@
   "description": "API client for Quran in NodeJs",
   "main": "fetcher.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "homepage": "https://github.com/octabytes/quran-client-nodejs#readme",
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
   }
 }

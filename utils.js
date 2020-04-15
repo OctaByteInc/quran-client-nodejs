@@ -1,6 +1,6 @@
 const multiURL = (url, cursor, limit) => {
   if (cursor) {
-    url += `?cusror=${cursor}`;
+    url += `?cursor=${cursor}`;
     if (limit) {
       url += `&limit=${limit}`;
     }

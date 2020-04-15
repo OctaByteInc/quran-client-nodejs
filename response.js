@@ -2,8 +2,10 @@ class ResponseGenerator {
   static single(res, name) {
     if (res.code == 200) {
       const response = new Response();
-      response[name] = res.code.data.audio;
+      response[name] = res.data[name];
+      return response;
     } else {
+      console.warn(res);
       throw new Error(res.status);
     }
   }
@@ -13,8 +15,10 @@ class ResponseGenerator {
       const response = new Response();
       response.numberOfResults = res.data.numberOfResults;
       response.cursor = res.data.cursor;
-      response[name] = res.data.edition;
+      response[name] = res.data[name];
+      return response;
     } else {
+      console.warn(res);
       throw new Error(res.status);
     }
   }
