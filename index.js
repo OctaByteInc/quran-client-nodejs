@@ -10,7 +10,7 @@ const Translation = require("./api/translation");
 //   .catch(console.log);
 
 const apiRequest = async () => {
-  const response = await Edition.byLanguage("en");
+  const response = await Surah.byEnglishName("Surah-1-English-Name");
   console.log(response);
 };
 
@@ -21,3 +21,5 @@ apiRequest();
 // FilterArabicTranslation --< Audio
 
 // Get all edition with limit and cursor ==> Edition
+
+// Find surah by english name ==> surah
