@@ -10,10 +10,8 @@ const Translation = require("./api/translation");
 //   .catch(console.log);
 
 const apiRequest = async () => {
-  const response = await Audio.byAyahId("ayah-1", null, (limit = 2));
+  const response = await Edition.byLanguage("en");
   console.log(response);
-  const response2 = await Audio.byAyahId("ayah-1", response.cursor);
-  console.log(response2);
 };
 
 apiRequest();
@@ -21,3 +19,5 @@ apiRequest();
 // gRPC problem
 // FindAudioByEditionId --> Audio
 // FilterArabicTranslation --< Audio
+
+// Get all edition with limit and cursor ==> Edition
