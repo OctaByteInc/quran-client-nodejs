@@ -4,8 +4,10 @@ const ResponseGenerator = require("../response");
 class Ayah {
   static async byId(id, parts = null, editionId = null) {
     const url = ayahURL(`/ayah/${id}`, parts, editionId);
+    console.log(url);
     const res = await Fetcher.get(url);
-    return ResponseGenerator.single(res, "ayah");
+    console.log(res);
+    return ResponseGenerator.single(res, "ayahResponse");
   }
   static async bySurahId(
     id,
@@ -22,38 +24,34 @@ class Ayah {
       editionId
     );
     const res = await Fetcher.get(url);
-    return ResponseGenerator.multi(res, "ayah");
+    return ResponseGenerator.multi(res, "ayahResponse");
   }
   static async byNumber(number, parts = null, editionId = null) {
     const url = ayahURL(`/ayah/number/${number}`, parts, editionId);
     const res = await Fetcher.get(url);
-    return ResponseGenerator.single(res, "ayah");
+    return ResponseGenerator.single(res, "ayahResponse");
   }
   static async byNumberInSurah(number, parts = null, editionId = null) {
-    const url = ayahURL(
-      `/ayah/surah/number_in_surah/${number}`,
-      parts,
-      editionId
-    );
+    const url = ayahURL(`/ayah/number_in_surah/${number}`, parts, editionId);
     const res = await Fetcher.get(url);
-    return ResponseGenerator.single(res, "ayah");
+    return ResponseGenerator.single(res, "ayahResponse");
   }
-  static async byJuzz(
-    juzz,
+  static async byJuz(
+    juz,
     cursor = null,
     limit = null,
     parts = null,
     editionId = null
   ) {
     const url = ayahMultiURL(
-      `/ayah/juzz/${juzz}`,
+      `/ayah/juz/${juz}`,
       cursor,
       limit,
       parts,
       editionId
     );
     const res = await Fetcher.get(url);
-    return ResponseGenerator.multi(res, "ayah");
+    return ResponseGenerator.multi(res, "ayahResponse");
   }
   static async byManzil(
     manzil,
@@ -70,7 +68,7 @@ class Ayah {
       editionId
     );
     const res = await Fetcher.get(url);
-    return ResponseGenerator.multi(res, "ayah");
+    return ResponseGenerator.multi(res, "ayahResponse");
   }
   static async byRuku(
     ruku,
@@ -87,7 +85,7 @@ class Ayah {
       editionId
     );
     const res = await Fetcher.get(url);
-    return ResponseGenerator.multi(res, "ayah");
+    return ResponseGenerator.multi(res, "ayahResponse");
   }
   static async byHizbQuarter(
     hizbQuarter,
@@ -104,7 +102,7 @@ class Ayah {
       editionId
     );
     const res = await Fetcher.get(url);
-    return ResponseGenerator.multi(res, "ayah");
+    return ResponseGenerator.multi(res, "ayahResponse");
   }
   static async bySajda(
     sajda,
@@ -121,7 +119,7 @@ class Ayah {
       editionId
     );
     const res = await Fetcher.get(url);
-    return ResponseGenerator.multi(res, "ayah");
+    return ResponseGenerator.multi(res, "ayahResponse");
   }
 }
 
@@ -131,7 +129,7 @@ const ayahURL = (url, parts = null, editionId = null) => {
     url += `?parts.list=${partsStr}`;
 
     if (editionId) {
-      url += `&edition_id=${editionId}`;
+      url += `&parts.edition_id=${editionId}`;
     }
   }
 
