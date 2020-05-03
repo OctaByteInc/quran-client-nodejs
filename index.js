@@ -18,15 +18,15 @@ const apiRequest = async () => {
 apiRequest();
 
 // gRPC problem
-// FindAudioByEditionId --> Audio
-// FilterArabicTranslation --< Audio
+// FindAudioByEditionId --> Audio --> Fixed Need compiste index
+// FilterArabicTranslation --< Audio --> Fixed There is no document for Translation
 
-// Get all edition with limit and cursor ==> Edition
+// Get all edition with limit and cursor ==> Edition --> Fixed Typo mistake
 
-// Find surah by english name ==> surah
+// Find surah by english name ==> surah --> Fix function missing
 
-// Translation find editon by id =-> Translation
+// Translation find editon by id =-> Translation --> Fixed Need compiste index
 
-// translation audio not comming in ayah parts --> ayah
-// parts is not working without edition id --> ayah
+// translation audio not comming in ayah parts --> ayah --> Fixed document does not exist
+// parts is not working without edition id --> ayah --> Fixed
 // sajda is not comming in ayah --> ayah
