@@ -23,11 +23,11 @@ describe("Edition API Tests", () => {
 
     const response2 = await Edition.getAll(response.cursor);
     let j;
-    for (j = 0; i < response2.edition.length; j++) {
+    for (j = 0; j < response2.edition.length; j++) {
       assert.notEqual(response.edition[j], undefined);
     }
 
-    assert.equal(j, response.numberOfResults);
+    assert.equal(j, response2.numberOfResults);
   });
 
   it("Find Edition by ID", async () => {

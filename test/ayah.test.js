@@ -129,7 +129,7 @@ describe("Ayah API Tests", () => {
       assert.notEqual(response.ayahResponse[j].image, undefined);
     }
 
-    assert.equal(i, response2.numberOfResults);
+    assert.equal(j, response2.numberOfResults);
   });
 
   it("Find ayah by number", async () => {
@@ -146,7 +146,7 @@ describe("Ayah API Tests", () => {
     const response = await Ayah.byJuz(1);
     let i;
     for (i = 0; i < response.ayahResponse.length; i++) {
-      assert.equal(response.ayahResponse[i].ayah.juzz, 1);
+      assert.equal(response.ayahResponse[i].ayah.juz, 1);
     }
 
     assert.equal(i, response.numberOfResults);
@@ -183,10 +183,10 @@ describe("Ayah API Tests", () => {
   });
 
   it("Find ayah by sajda", async () => {
-    const response = await Ayah.bySajda(false);
+    const response = await Ayah.bySajda(true);
     let i;
     for (i = 0; i < response.ayahResponse.length; i++) {
-      assert.equal(response.ayahResponse[i].ayah.sajda, false);
+      assert.equal(response.ayahResponse[i].ayah.sajda, true);
     }
 
     assert.equal(i, response.numberOfResults);

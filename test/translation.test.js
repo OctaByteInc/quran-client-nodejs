@@ -28,8 +28,8 @@ describe("Translation API Tests", () => {
 
     const response2 = await Translation.byAyahId("ayah-1", response.cursor);
     let j;
-    for (j = 0; j < responses.translation.length; i++) {
-      assert.equal(responses.translation[i].ayahId, "ayah-1");
+    for (j = 0; j < response2.translation.length; j++) {
+      assert.equal(response2.translation[j].ayahId, "ayah-1");
     }
 
     assert(j, response2.numberOfResults);

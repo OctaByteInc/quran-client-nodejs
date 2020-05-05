@@ -10,9 +10,9 @@ const Translation = require("./api/translation");
 //   .catch(console.log);
 
 const apiRequest = async () => {
-  const parts = ["Translation", "Surah", "Edition", "Arabic_Audio", "Image"];
-  const response = await Ayah.bySajda(false);
-  console.log(response);
+  const response = await Audio.byId("audio-1");
+  console.log(response)
+  console.log(response.audio.id, "audio-1");
 };
 
 apiRequest();
