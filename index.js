@@ -10,9 +10,20 @@ const Translation = require("./api/translation");
 //   .catch(console.log);
 
 const apiRequest = async () => {
-  const response = await Audio.byId("audio-1");
-  console.log(response)
-  console.log(response.audio.id, "audio-1");
+  const response = await Audio.byAyahId("ayah-1", null, limit = 2);
+    for (let i = 0; i < response.audio.length; i++) {
+      console.log(response.audio[i].ayahId, "ayah-1");
+    }
+
+    console.log(response.numberOfResults, 2);
+
+    const response2 = await Audio.byAyahId("ayah-1", response.cursor);
+    let i;
+    for (i = 0; i < response2.audio.length; i++) {
+      console.log(response2.audio[i].ayahId, "ayah-1");
+    }
+
+    console.log(i, response2.numberOfResults);
 };
 
 apiRequest();

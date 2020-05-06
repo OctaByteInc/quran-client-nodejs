@@ -18,7 +18,7 @@ describe("Audio API Tests", () => {
   });
 
   it("Find Audio By Ayah ID with limit and cursor", async () => {
-    const response = await Audio.byAyahId("ayah-1", null, (limit = 2));
+    const response = await Audio.byAyahId("ayah-1", null, limit = 2);
     for (let i = 0; i < response.audio.length; i++) {
       assert.equal(response.audio[i].ayahId, "ayah-1");
     }
