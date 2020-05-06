@@ -1,8 +1,8 @@
 {
   "name": "quran-client-nodejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API client for Quran in NodeJs",
-  "main": "fetcher.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
