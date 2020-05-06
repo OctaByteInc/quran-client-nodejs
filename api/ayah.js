@@ -4,9 +4,7 @@ const ResponseGenerator = require("../response");
 class Ayah {
   static async byId(id, parts = null, editionId = null) {
     const url = ayahURL(`/ayah/${id}`, parts, editionId);
-    console.log(url);
     const res = await Fetcher.get(url);
-    console.log(res);
     return ResponseGenerator.single(res, "ayahResponse");
   }
   static async bySurahId(
