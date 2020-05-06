@@ -108,3 +108,7 @@ temp/
 .vscode
 .idea
 .DS_Store
+
+# ignore main and index files
+index.js
+main.js
