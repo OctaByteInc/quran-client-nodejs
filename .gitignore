@@ -110,5 +110,4 @@ temp/
 .DS_Store
 
 # ignore main and index files
-index.js
 main.js
